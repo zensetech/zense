@@ -1,0 +1,36 @@
+.viewport {
+  overflow: hidden;
+  /* Height is determined by content */
+}
+
+.flexContainer {
+  display: flex;
+  /* The animation name and duration */
+  animation: scroll 20s linear infinite;
+}
+
+.flexContainer:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.testimonialBox {
+  flex: 0 0 auto; /* Prevent shrinking and growing */
+  width: 400px; /* Adjust width as needed */
+  margin-right: 20px; /* Adjust spacing as needed */
+}
+
+/* Basic responsiveness */
+@media (max-width: 768px) {
+  .testimonialBox {
+    width: 350px; /* Adjust width for smaller screens */
+  }
+}

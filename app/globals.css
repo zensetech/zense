@@ -1,0 +1,145 @@
+/* This file is processed by Tailwind CSS */
+/* tailwindcss */
+/* Adding a comment to trigger re-processing */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    /* Teal color scheme with black text */
+    --primary: 187 75% 25%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 187 35% 95%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 187 35% 95%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 187 75% 25%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 187 35% 90%;
+    --input: 187 35% 90%;
+    --ring: 187 75% 25%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+h4 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+h5 {
+  font-size: 0.875rem;
+  font-weight: 300;
+}
+h6 {
+  font-size: 0.75rem;
+  font-weight: 200;
+}
+ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
+}
+ol {
+  list-style-type: decimal;
+  margin-left: 1.5rem;
+}
+
+ol li {
+  margin-bottom: 0.5rem;
+}
+
+/* Custom styles */
+.hero-gradient {
+  background: linear-gradient(135deg, hsl(187 75% 25% / 0.1), hsl(187 75% 25% / 0.05));
+}
+
+.feature-card {
+  background: linear-gradient(135deg, white, hsl(187 75% 98%));
+}
+
+.testimonial-card {
+  background: linear-gradient(135deg, white, hsl(187 75% 98%));
+  box-shadow: 0 4px 6px -1px hsl(187 75% 25% / 0.1), 0 2px 4px -2px hsl(187 75% 25% / 0.1);
+}
+
+/* Hide scrollbar for elements with overflow */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}
+
+/* Header transition */
+header {
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.header-hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+/* Ensure images within prose content are responsive */
+.prose img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Line clamp for testimonials */
+.line-clamp-4 {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
