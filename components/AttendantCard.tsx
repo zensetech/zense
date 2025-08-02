@@ -66,9 +66,9 @@ const AttendantCard: React.FC<{ attendant: Attendant }> = ({ attendant }) => {
             </button>
           </div>
           <div>
-            <h2 className="text-lg font-bold text-gray-800">
+            <div className="text-base font-bold text-gray-800">
               {attendant.fullName}
-            </h2>
+            </div>
             <div className="flex items-center gap-1 mt-0.5">
               <User size={12} className="text-teal-600" />
               <p className="text-xs text-gray-600">
@@ -93,7 +93,9 @@ const AttendantCard: React.FC<{ attendant: Attendant }> = ({ attendant }) => {
           <img
             src={getAttendantIcon(attendant.jobRole, attendant.gender)}
             alt={attendant.fullName}
-            className="w-24 h-24 sm:w-32 sm:h-32 rounded-lg sm:rounded-xl object-cover border-2 sm:border-4 border-teal-100"
+            width={128}
+            height={128}
+            className="w-20 h-20 sm:w-32 sm:h-32 rounded-lg sm:rounded-xl object-contain border-2 sm:border-4 border-teal-100"
           />
         </div>
         <div className="absolute top-2 right-2">
@@ -114,13 +116,13 @@ const AttendantCard: React.FC<{ attendant: Attendant }> = ({ attendant }) => {
         {/* Desktop Header */}
         <div className="hidden sm:flex justify-between items-start">
           <div>
-            <h2 className="text-lg sm:text-xl font-bold text-gray-800">
+            <div className="text-base sm:text-base font-bold text-gray-800">
               {attendant.fullName}
-            </h2>
+            </div>
             <div className="flex items-center gap-2 mt-1">
               <User size={14} className="text-teal-600" />
-              <p className="text-sm sm:text-base text-gray-600">
-                {attendant.gender} • {attendant.experienceYears}+ yrs
+              <p className="text-sm sm:text-sm text-gray-600">
+                {attendant.gender?.toUpperCase()} • {attendant.experienceYears}+ yrs
               </p>
               {attendant.rating && (
                 <div className="flex items-center ml-2 bg-amber-50 px-2 py-0.5 rounded-full">

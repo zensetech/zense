@@ -104,7 +104,7 @@ interface Provider {
 interface Attendant {
   id: string;
   fullName: string;
-  name?: string;
+  name: string;
   jobRole: string;
   experienceYears: number | string;
   languagesKnown: string[];
@@ -566,6 +566,7 @@ function ProvidersContent() {
     const otherListings = filteredListings.filter(
       (listing) => !locationMatch(listing)
     );
+    console.log(otherListings)
     if (!currentLocation || !district) {
       return (
         <div className="flex flex-col items-center justify-center h-[50vh]">
@@ -614,11 +615,13 @@ function ProvidersContent() {
                 <AttendantCard
                   key={attendant.id}
                   attendant={{
-                    fullName: attendant.fullName,
+                    fullName: attendant?.name,
                     jobRole: attendant.jobRole,
                     experienceYears: attendant.experienceYears,
                     languagesKnown: attendant.languagesKnown,
-                    location: `${attendant.district}`,
+                    // location: `${attendant.district}`,
+                    // location: `${attendant.currentAddress?.state}`,
+                    location: "Delhi NCR",
                     preferredShifts: attendant.preferredShifts,
                     extraServicesOffered: attendant.extraServicesOffered,
                     gender: attendant.gender,
@@ -637,18 +640,23 @@ function ProvidersContent() {
         {otherListings.length > 0 && (
           <div>
             <h2 className="text-2xl font-bold mb-4 text-center">
-              Other Providers in Delhi NCR
+              All Providers in Delhi NCR
             </h2>
             <div className="flex flex-wrap justify-center gap-5 p-5">
-              {otherListings.map((attendant) => (
+              {otherListings.map((attendant) => 
+
+               (
+
                 <AttendantCard
                   key={attendant.id}
                   attendant={{
-                    fullName: attendant.fullName,
+                    fullName: attendant?.name.toUpperCase(),
                     jobRole: attendant.jobRole,
                     experienceYears: attendant.experienceYears,
                     languagesKnown: attendant.languagesKnown,
-                    location: `${attendant.district}`,
+                    // location: `${attendant.district}`,
+                    // location: `${attendant.currentAddress?.state}`,
+                    location: "Delhi NCR",
                     preferredShifts: attendant.preferredShifts,
                     extraServicesOffered: attendant.extraServicesOffered,
                     gender: attendant.gender,

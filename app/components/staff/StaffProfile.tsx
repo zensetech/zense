@@ -60,7 +60,7 @@ export const StaffProfile: React.FC<StaffProfileProps> = ({
                         : "/uploads/attendant_female.png")
                 }
                 alt={staff.name || staff.fullName || "Staff"}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
               />
             </div>
             <div className="text-center mt-2">
